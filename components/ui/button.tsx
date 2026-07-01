@@ -6,7 +6,7 @@ import { Loader2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-semibold whitespace-nowrap transition-all duration-200 outline-none select-none active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/button inline-flex shrink-0 items-center justify-center rounded-full border border-transparent bg-clip-padding text-[16px] font-semibold whitespace-nowrap transition-all duration-[250ms] ease-out outline-none select-none active:scale-[0.98] hover:translate-y-[-2px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 [&_svg]:transition-transform [&_svg]:duration-[250ms] [&_svg]:ease-out group-hover/button:[&_svg]:translate-x-[4px]",
   {
     variants: {
       variant: {
@@ -21,10 +21,10 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline focus-visible:underline focus-visible:ring-1 focus-visible:ring-ring/50",
       },
       size: {
-        default: "h-10 gap-2 px-4 py-2 text-sm",
-        sm: "h-9 gap-1.5 rounded-md px-3 text-xs",
-        lg: "h-12 gap-2.5 rounded-xl px-6 text-base",
-        icon: "size-10 rounded-md",
+        default: "h-10 gap-2 px-5 py-2",
+        sm: "h-9 gap-1.5 px-4 text-sm",
+        lg: "h-12 gap-2.5 px-6 text-base",
+        icon: "size-10",
       },
     },
     defaultVariants: {

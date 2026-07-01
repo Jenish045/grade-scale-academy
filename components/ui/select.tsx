@@ -15,7 +15,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           disabled={disabled}
           ref={ref}
           className={cn(
-            "flex h-10 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:border-primary disabled:cursor-not-allowed disabled:bg-muted/30 disabled:opacity-60 transition-all duration-200 appearance-none pr-10",
+            "flex h-10 w-full rounded-[18px] border border-[rgba(15,23,42,0.12)] bg-background px-3 py-2 text-sm placeholder:text-muted-foreground/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:border-primary disabled:cursor-not-allowed disabled:bg-muted/30 disabled:opacity-60 transition-all duration-200 appearance-none pr-10",
             error && "border-destructive text-destructive focus-visible:ring-destructive/20 focus-visible:border-destructive",
             success && "border-success text-success focus-visible:ring-success/20 focus-visible:border-success",
             className

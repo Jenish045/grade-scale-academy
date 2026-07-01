@@ -11,25 +11,25 @@ interface AnimationProps {
   viewportOnce?: boolean
 }
 
-// 1. Fade Up Animation
+// 1. Standardized Reveal / Fade Up (y: 24 -> 0, duration: 0.6, ease: easeOut, once: true, amount: 0.15)
 export const FadeUp: React.FC<AnimationProps> = ({
   children,
   delay = 0,
-  duration = 0.5,
+  duration = 0.6,
   className,
-  viewportOnce = true,
+  viewportOnce = true, // Ticket Global: default to once: true
 }) => {
   const shouldReduceMotion = useReducedMotion()
 
   return (
     <motion.div
-      initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+      initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: viewportOnce, margin: "-50px" }}
+      viewport={{ once: viewportOnce, amount: 0.15 }} // Ticket Global: amount: 0.15
       transition={{
         duration: duration,
         delay: delay,
-        ease: [0.16, 1, 0.3, 1], // Custom premium easeOutExpo
+        ease: "easeOut",
       }}
       className={className}
     >
@@ -38,11 +38,11 @@ export const FadeUp: React.FC<AnimationProps> = ({
   )
 }
 
-// 2. Fade Left Animation
+// 2. Standardized Fade Left
 export const FadeLeft: React.FC<AnimationProps> = ({
   children,
   delay = 0,
-  duration = 0.5,
+  duration = 0.6,
   className,
   viewportOnce = true,
 }) => {
@@ -52,11 +52,11 @@ export const FadeLeft: React.FC<AnimationProps> = ({
     <motion.div
       initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 20 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: viewportOnce, margin: "-50px" }}
+      viewport={{ once: viewportOnce, amount: 0.15 }}
       transition={{
         duration: duration,
         delay: delay,
-        ease: [0.16, 1, 0.3, 1],
+        ease: "easeOut",
       }}
       className={className}
     >
@@ -65,11 +65,11 @@ export const FadeLeft: React.FC<AnimationProps> = ({
   )
 }
 
-// 3. Fade Right Animation
+// 3. Standardized Fade Right
 export const FadeRight: React.FC<AnimationProps> = ({
   children,
   delay = 0,
-  duration = 0.5,
+  duration = 0.6,
   className,
   viewportOnce = true,
 }) => {
@@ -79,11 +79,11 @@ export const FadeRight: React.FC<AnimationProps> = ({
     <motion.div
       initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: viewportOnce, margin: "-50px" }}
+      viewport={{ once: viewportOnce, amount: 0.15 }}
       transition={{
         duration: duration,
         delay: delay,
-        ease: [0.16, 1, 0.3, 1],
+        ease: "easeOut",
       }}
       className={className}
     >
@@ -92,11 +92,11 @@ export const FadeRight: React.FC<AnimationProps> = ({
   )
 }
 
-// 4. Scale In Animation
+// 4. Standardized Image Scale In
 export const ScaleIn: React.FC<AnimationProps> = ({
   children,
   delay = 0,
-  duration = 0.5,
+  duration = 0.6,
   className,
   viewportOnce = true,
 }) => {
@@ -104,13 +104,13 @@ export const ScaleIn: React.FC<AnimationProps> = ({
 
   return (
     <motion.div
-      initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.96 }}
+      initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.98 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: viewportOnce, margin: "-50px" }}
+      viewport={{ once: viewportOnce, amount: 0.15 }}
       transition={{
         duration: duration,
         delay: delay,
-        ease: [0.16, 1, 0.3, 1],
+        ease: "easeOut",
       }}
       className={className}
     >
@@ -119,7 +119,7 @@ export const ScaleIn: React.FC<AnimationProps> = ({
   )
 }
 
-// 5. Stagger Container Animation
+// 5. Standardized Stagger Container (stagger: 0.05, once: true, amount: 0.15)
 interface StaggerContainerProps {
   children: React.ReactNode
   staggerChildrenDelay?: number
@@ -130,10 +130,10 @@ interface StaggerContainerProps {
 
 export const StaggerContainer: React.FC<StaggerContainerProps> = ({
   children,
-  staggerChildrenDelay = 0.1,
+  staggerChildrenDelay = 0.05, // Ticket Global: stagger 0.05 (0.04-0.08s range)
   delay = 0,
   className,
-  viewportOnce = true,
+  viewportOnce = true, // Ticket Global: default to once: true
 }) => {
   const shouldReduceMotion = useReducedMotion()
 
@@ -141,7 +141,7 @@ export const StaggerContainer: React.FC<StaggerContainerProps> = ({
     <motion.div
       initial="hidden"
       whileInView="show"
-      viewport={{ once: viewportOnce, margin: "-50px" }}
+      viewport={{ once: viewportOnce, amount: 0.15 }} // Ticket Global: amount: 0.15
       variants={{
         hidden: {},
         show: {
@@ -158,7 +158,7 @@ export const StaggerContainer: React.FC<StaggerContainerProps> = ({
   )
 }
 
-// Helper variant to place on direct children of StaggerContainer
+// 6. Standardized Stagger Item (y: 24 -> 0, duration: 0.6, ease: easeOut)
 export const StaggerItem: React.FC<{ children: React.ReactNode; className?: string }> = ({
   children,
   className,
@@ -168,8 +168,8 @@ export const StaggerItem: React.FC<{ children: React.ReactNode; className?: stri
   return (
     <motion.div
       variants={{
-        hidden: shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 15 },
-        show: { opacity: 1, y: 0, transition: { ease: [0.16, 1, 0.3, 1], duration: 0.5 } },
+        hidden: shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 },
+        show: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.6 } },
       }}
       className={className}
     >
@@ -178,7 +178,7 @@ export const StaggerItem: React.FC<{ children: React.ReactNode; className?: stri
   )
 }
 
-// 6. Hover Lift Interaction (Wrapper)
+// 7. Hover Lift
 export const HoverLift: React.FC<{ children: React.ReactNode; className?: string }> = ({
   children,
   className,
@@ -187,10 +187,16 @@ export const HoverLift: React.FC<{ children: React.ReactNode; className?: string
 
   return (
     <motion.div
-      whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.2, ease: "easeOut" } }}
+      whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.3, ease: "easeOut" } }}
       className={className}
     >
       {children}
     </motion.div>
   )
 }
+
+/* Explicit Named Mappings */
+export const AnimateHeading = FadeUp
+export const AnimateCards = StaggerContainer
+export const AnimateCardItem = StaggerItem
+export const AnimateImage = ScaleIn

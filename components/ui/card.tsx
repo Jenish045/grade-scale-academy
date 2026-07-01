@@ -13,7 +13,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-2xl border border-border bg-card text-card-foreground shadow-sm transition-all duration-300 hover:shadow-premium hover:-translate-y-[2px]",
+      "rounded-[24px] border border-[rgba(15,23,42,0.08)] bg-card text-card-foreground shadow-premium-card transition-all duration-[300ms] ease-out hover:translate-y-[-4px] hover:shadow-premium-hover",
       className
     )}
     {...props}
@@ -39,7 +39,7 @@ const CardTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <Typography
     ref={ref}
-    variant="h4"
+    variant="h3"
     className={cn("font-heading font-medium tracking-tight", className)}
     {...props}
   />
@@ -117,7 +117,7 @@ export const FeatureCard = React.forwardRef<HTMLDivElement, FeatureCardProps>(
         {icon}
       </div>
       <div className="space-y-2">
-        <Typography variant="h4" className="font-heading font-medium">{title}</Typography>
+        <Typography variant="h3" className="font-heading font-medium">{title}</Typography>
         <Typography variant="small" className="text-muted-foreground/90 block leading-relaxed">{description}</Typography>
       </div>
     </Card>
@@ -136,13 +136,13 @@ export interface CountryCardProps extends React.HTMLAttributes<HTMLDivElement> {
 export const CountryCard = React.forwardRef<HTMLDivElement, CountryCardProps>(
   ({ className, name, imageUrl, visaSuccessRate, popularPrograms, onSelect, ...props }, ref) => (
     <Card ref={ref} className={cn("overflow-hidden group/country flex flex-col h-full", className)} {...props}>
-      <div className="relative w-full h-48 overflow-hidden bg-muted">
+      <div className="relative w-full h-48 overflow-hidden bg-muted rounded-t-[23px]">
         <Image
           src={imageUrl}
           alt={name}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover transition-transform duration-500 group-hover/country:scale-105"
+          className="object-cover transition-transform duration-[350ms] group-hover/country:scale-[1.02]"
         />
         {visaSuccessRate && (
           <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-primary">
@@ -171,7 +171,7 @@ export const CountryCard = React.forwardRef<HTMLDivElement, CountryCardProps>(
           className="w-full text-center text-sm font-semibold text-primary hover:text-primary/80 flex items-center justify-center gap-1.5 transition-colors"
         >
           Explore Requirements
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="size-3.5 transition-transform group-hover/country:translate-x-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="size-3.5 transition-transform duration-[250ms] group-hover/country:translate-x-[4px]">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
         </button>
@@ -193,7 +193,7 @@ export const ServiceCard = React.forwardRef<HTMLDivElement, ServiceCardProps>(
     <Card ref={ref} className={cn("p-6 flex flex-col justify-between h-full hover:border-secondary-foreground/20", className)} {...props}>
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <span className="text-[10px] uppercase font-bold tracking-widest text-secondary-foreground bg-secondary/30 px-2.5 py-1 rounded">
+          <span className="text-[10px] uppercase font-bold tracking-widest text-secondary-foreground bg-secondary/30 px-2.5 py-1 rounded-full border border-[rgba(15,23,42,0.08)]">
             {category}
           </span>
         </div>
@@ -229,17 +229,17 @@ export interface TeamCardProps extends React.HTMLAttributes<HTMLDivElement> {
 export const TeamCard = React.forwardRef<HTMLDivElement, TeamCardProps>(
   ({ className, name, role, imageUrl, bio, ...props }, ref) => (
     <Card ref={ref} className={cn("overflow-hidden group/team flex flex-col h-full bg-card hover:border-accent-foreground/20", className)} {...props}>
-      <div className="relative w-full h-64 overflow-hidden bg-muted">
+      <div className="relative w-full h-64 overflow-hidden bg-muted rounded-t-[23px]">
         <Image
           src={imageUrl}
           alt={name}
           fill
           sizes="(max-width: 768px) 100vw, 25vw"
-          className="object-cover transition-transform duration-500 group-hover/team:scale-102"
+          className="object-cover transition-transform duration-[350ms] group-hover/team:scale-[1.02]"
         />
       </div>
       <CardHeader className="p-5 text-center flex-1">
-        <Typography variant="h4" className="font-heading font-medium tracking-tight">{name}</Typography>
+        <Typography variant="h3" className="font-heading font-medium tracking-tight">{name}</Typography>
         <Typography variant="caption" className="text-[10px] text-primary/80 font-bold tracking-widest block mt-1">{role}</Typography>
         {bio && (
           <Typography variant="small" className="text-muted-foreground mt-3 text-xs block leading-relaxed line-clamp-3">

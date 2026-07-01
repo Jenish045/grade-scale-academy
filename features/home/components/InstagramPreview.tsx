@@ -3,7 +3,6 @@ import { MapPin, Users, Sparkles, Compass } from "lucide-react"
 import { Section } from "@/components/ui/section"
 import { Typography } from "@/components/ui/typography"
 import { Button } from "@/components/ui/button"
-import { StaggerContainer, StaggerItem } from "@/components/ui/animation"
 import { HomePlaceholder } from "./HomePlaceholder"
 
 export default function InstagramPreview() {
@@ -19,39 +18,23 @@ export default function InstagramPreview() {
     >
       <div className="space-y-12">
         {/* Large Responsive Gallery Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-12 items-stretch max-w-6xl mx-auto">
-          {/* Left Column: Large Feature Image (Exterior & Reception Workspace) */}
-          <div className="lg:col-span-6 w-full flex items-stretch">
-            <HomePlaceholder
-              label="Exterior & Reception Workspace [Photo Placeholder]"
-              aspectRatio="aspect-[4/3] md:aspect-[16/11] lg:aspect-auto w-full h-full min-h-[320px]"
-              className="shadow-premium-card hover:translate-y-[-4px] hover:shadow-[0_16px_36px_rgba(15,23,42,0.06)] transition-all duration-[250ms] ease-out"
-            />
-          </div>
-
-          {/* Right Column: 2x2 Grid of 4 Supporting Images */}
-          <div className="lg:col-span-6 grid grid-cols-2 gap-8 md:gap-10 lg:gap-12 w-full">
-            <HomePlaceholder
-              label="Counselling Cabin [Photo Placeholder]"
-              aspectRatio="aspect-square"
-              className="shadow-premium-card hover:translate-y-[-4px] hover:shadow-[0_16px_36px_rgba(15,23,42,0.06)] transition-all duration-[250ms] ease-out"
-            />
-            <HomePlaceholder
-              label="Classroom Study Area [Photo Placeholder]"
-              aspectRatio="aspect-square"
-              className="shadow-premium-card hover:translate-y-[-4px] hover:shadow-[0_16px_36px_rgba(15,23,42,0.06)] transition-all duration-[250ms] ease-out"
-            />
-            <HomePlaceholder
-              label="Student Interaction Space [Photo Placeholder]"
-              aspectRatio="aspect-square"
-              className="shadow-premium-card hover:translate-y-[-4px] hover:shadow-[0_16px_36px_rgba(15,23,42,0.06)] transition-all duration-[250ms] ease-out"
-            />
-            <HomePlaceholder
-              label="Reference Library Room [Photo Placeholder]"
-              aspectRatio="aspect-square"
-              className="shadow-premium-card hover:translate-y-[-4px] hover:shadow-[0_16px_36px_rgba(15,23,42,0.06)] transition-all duration-[250ms] ease-out"
-            />
-          </div>
+        {/* Lightweight 3-Image Horizontal Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <HomePlaceholder
+            label="Counseling Cabin [Photo Placeholder]"
+            aspectRatio="aspect-[4/3]"
+            className="shadow-premium-card hover:translate-y-[-4px] hover:shadow-[0_16px_36px_rgba(15,23,42,0.06)] transition-all duration-[250ms] ease-out"
+          />
+          <HomePlaceholder
+            label="Classroom Study Area [Photo Placeholder]"
+            aspectRatio="aspect-[4/3]"
+            className="shadow-premium-card hover:translate-y-[-4px] hover:shadow-[0_16px_36px_rgba(15,23,42,0.06)] transition-all duration-[250ms] ease-out"
+          />
+          <HomePlaceholder
+            label="Reference Library Room [Photo Placeholder]"
+            aspectRatio="aspect-[4/3]"
+            className="shadow-premium-card hover:translate-y-[-4px] hover:shadow-[0_16px_36px_rgba(15,23,42,0.06)] transition-all duration-[250ms] ease-out"
+          />
         </div>
 
         {/* Small Info Strip below gallery */}

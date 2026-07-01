@@ -3,12 +3,12 @@
 import React, { useState } from "react"
 import Link from "next/link"
 import { 
-  Shield, 
-  UserCheck, 
-  HeartHandshake, 
-  Compass, 
   ChevronDown,
-  CheckCircle2
+  CheckCircle2,
+  UserCheck,
+  Compass,
+  Shield,
+  HeartHandshake
 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -378,15 +378,46 @@ export default function HowWeHelpPage() {
         </div>
       </Section>
 
-      {/* SECTION 5: FREQUENTLY ASKED QUESTIONS (Expandable Accordion) */}
-      <Section id="help-faq" variant="standard" className="bg-white py-[88px] lg:py-[112px] border-b border-[rgba(15,23,42,0.08)]">
+      {/* SECTION 5: FINAL CTA (Strictly Centered Card) */}
+      <Section id="help-final-cta" variant="cta" className="bg-white">
+        <div className="w-full max-w-5xl mx-auto rounded-[32px] border border-[rgba(15,23,42,0.08)] bg-card p-10 md:p-16 lg:p-20 shadow-premium-card text-center flex flex-col items-center justify-center space-y-8">
+          <div className="space-y-4 max-w-2xl flex flex-col items-center">
+            <Typography variant="h2" className="text-3xl md:text-[56px] leading-[1.08] font-heading font-semibold text-foreground text-center">
+              {"Let's Align Your Path"}
+            </Typography>
+            <Typography variant="body-large" className="text-[20px] leading-[1.8] text-muted-foreground/95 max-w-xl mx-auto font-light text-center">
+              {"If you are ready to prepare for your IELTS/PTE tests or build your applications, we are here to support you at every stage."}
+            </Typography>
+          </div>
+
+          <div className="flex flex-wrap gap-4 justify-center w-full">
+            <Link href="/consultation" className="focus-visible:outline-none">
+              <Button variant="primary" size="lg" className="relative group/button overflow-hidden rounded-full shadow-md hover:shadow-lg transition-shadow">
+                Request a Consultation
+                {/* Shine overlay */}
+                <div className="absolute inset-0 -translate-x-full group-hover/button:animate-shine bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+              </Button>
+            </Link>
+            <Link href="/study-destinations" className="focus-visible:outline-none">
+              <Button variant="outline" size="lg" className="relative group/button overflow-hidden rounded-full">
+                Explore Study Destinations
+                {/* Shine overlay */}
+                <div className="absolute inset-0 -translate-x-full group-hover/button:animate-shine bg-gradient-to-r from-transparent via-foreground/5 to-transparent pointer-events-none" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </Section>
+
+      {/* SECTION 6: FREQUENTLY ASKED QUESTIONS (Expandable Accordion) */}
+      <Section id="help-faq" variant="standard" className="bg-rhythm border-t border-[rgba(15,23,42,0.08)] pb-[56px]">
         <div className="space-y-16 max-w-4xl mx-auto flex flex-col items-center">
           <div className="text-center max-w-2xl flex flex-col items-center space-y-3">
             <Typography variant="h2" className="text-3xl font-heading font-semibold text-foreground text-center">
               Frequently Asked Questions
             </Typography>
             <Typography variant="body" className="text-muted-foreground leading-relaxed text-center font-light">
-              {"Common questions about our preparation modules and university کوتاه shortlist practices."}
+              {"Common questions about our preparation modules and university shortlists."}
             </Typography>
           </div>
 
@@ -423,37 +454,6 @@ export default function HowWeHelpPage() {
                 </div>
               )
             })}
-          </div>
-        </div>
-      </Section>
-
-      {/* SECTION 6: FINAL CTA (Strictly Centered Card) */}
-      <Section id="help-final-cta" variant="standard" className="bg-white py-[88px] lg:py-[112px]">
-        <div className="w-full max-w-5xl mx-auto rounded-[32px] border border-[rgba(15,23,42,0.08)] bg-card p-10 md:p-16 lg:p-20 shadow-premium-card text-center flex flex-col items-center justify-center space-y-8">
-          <div className="space-y-4 max-w-2xl flex flex-col items-center">
-            <Typography variant="h2" className="text-3xl md:text-[56px] leading-[1.08] font-heading font-semibold text-foreground text-center">
-              {"Let's Align Your Path"}
-            </Typography>
-            <Typography variant="body-large" className="text-[20px] leading-[1.8] text-muted-foreground/95 max-w-xl mx-auto font-light text-center">
-              {"If you are ready to prepare for your IELTS/PTE tests or build your applications, we are here to support you at every stage."}
-            </Typography>
-          </div>
-
-          <div className="flex flex-wrap gap-4 justify-center w-full">
-            <Link href="/consultation" className="focus-visible:outline-none">
-              <Button variant="primary" size="lg" className="relative group/button overflow-hidden rounded-full shadow-md hover:shadow-lg transition-shadow">
-                Request a Consultation
-                {/* Shine overlay */}
-                <div className="absolute inset-0 -translate-x-full group-hover/button:animate-shine bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
-              </Button>
-            </Link>
-            <Link href="/study-destinations" className="focus-visible:outline-none">
-              <Button variant="outline" size="lg" className="relative group/button overflow-hidden rounded-full">
-                Explore Study Destinations
-                {/* Shine overlay */}
-                <div className="absolute inset-0 -translate-x-full group-hover/button:animate-shine bg-gradient-to-r from-transparent via-foreground/5 to-transparent pointer-events-none" />
-              </Button>
-            </Link>
           </div>
         </div>
       </Section>

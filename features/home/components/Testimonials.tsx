@@ -31,12 +31,12 @@ export default function Testimonials() {
 
   return (
     <Section
-      id="journeys" // Section 1: id added
+      id="journeys"
       title="Student Journeys"
       subtitle="Verified Journeys"
       description="Every student's journey is unique. Here, we will share verified success stories once students complete their pathways."
-      variant="standard"
-      className="bg-rhythm border-b border-[rgba(15,23,42,0.08)]"
+      variant="compact"
+      className="bg-rhythm border-b border-[rgba(15,23,42,0.08)] py-[80px]"
     >
       <div className="space-y-12">
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12">

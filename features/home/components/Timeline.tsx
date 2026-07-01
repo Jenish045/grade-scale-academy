@@ -2,7 +2,7 @@
 
 import { Section } from "@/components/ui/section"
 import { Typography } from "@/components/ui/typography"
-import { FadeUp, StaggerContainer, StaggerItem } from "@/components/ui/animation"
+import { FadeUp, StaggerContainer } from "@/components/ui/animation"
 import { motion } from "framer-motion"
 
 interface TimelineStep {
@@ -53,13 +53,14 @@ export default function Timeline() {
   return (
     <Section
       id="timeline"
-      title="Your Journey, One Step At A Time" // Ticket 003: Heading renamed
+      title="Your Journey, One Step At A Time"
       subtitle="Our Mentorship Timeline"
       description="We split the complex journey into simple, logical stages. We ensure each phase is complete and verified before moving to the next."
-      variant="standard"
-      className="bg-rhythm border-b border-[rgba(15,23,42,0.08)]"
+      variant="compact"
+      className="bg-rhythm border-b border-[rgba(15,23,42,0.08)] py-[80px]"
+      headerClassName="max-w-[760px] mb-10 lg:mb-12"
     >
-      <StaggerContainer className="relative max-w-4xl mx-auto pt-8">
+      <StaggerContainer className="relative max-w-4xl mx-auto pt-4">
         {/* Vertical Line running down the center with viewport entrance grow animation */}
         <motion.div
           initial={{ scaleY: 0 }}
@@ -67,7 +68,7 @@ export default function Timeline() {
           viewport={{ once: false, amount: 0.25 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           style={{ transformOrigin: "top" }}
-          className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-[rgba(15,23,42,0.08)] -translate-x-1/2 pointer-events-none"
+          className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 -translate-x-1/2 pointer-events-none"
         />
 
         <div className="space-y-12 md:space-y-16">

@@ -19,7 +19,7 @@ export default function CtaSection() {
             variant="h2"
             className="font-heading font-semibold tracking-tight text-foreground text-3xl md:text-[56px] leading-[1.08] text-pretty-custom"
           >
-            Let's Talk About Your Future
+            {"Let's Talk About Your Future"}
           </Typography>
           <Typography
             variant="body-large"

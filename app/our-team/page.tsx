@@ -366,8 +366,39 @@ export default function OurTeamPage() {
         </div>
       </Section>
 
-      {/* SECTION 9: FAQs (Accordion) */}
-      <Section id="team-faq" variant="standard" className="bg-white py-[88px] lg:py-[112px] border-b border-[rgba(15,23,42,0.08)]">
+      {/* SECTION 9: FINAL CTA (Centered Card) */}
+      <Section id="team-final-cta" variant="cta" className="bg-white">
+        <div className="w-full max-w-5xl mx-auto rounded-[32px] border border-[rgba(15,23,42,0.08)] bg-card p-10 md:p-16 lg:p-20 shadow-premium-card text-center flex flex-col items-center justify-center space-y-8">
+          <div className="space-y-4 max-w-2xl flex flex-col items-center">
+            <Typography variant="h2" className="text-3xl md:text-[56px] leading-[1.08] font-heading font-semibold text-foreground text-center">
+              {"Let's Start With A Conversation"}
+            </Typography>
+            <Typography variant="body-large" className="text-[20px] leading-[1.8] text-muted-foreground/95 max-w-xl mx-auto font-light text-center">
+              {"Whether you already know where you want to study or you're just beginning your research, we're here to help you make informed decisions with confidence."}
+            </Typography>
+          </div>
+
+          <div className="flex flex-wrap gap-4 justify-center w-full">
+            <Link href="/consultation" className="focus-visible:outline-none">
+              <Button variant="primary" size="lg" className="relative group/button overflow-hidden rounded-full shadow-md hover:shadow-lg transition-shadow">
+                Request a Consultation
+                {/* Shine overlay */}
+                <div className="absolute inset-0 -translate-x-full group-hover/button:animate-shine bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+              </Button>
+            </Link>
+            <Link href="/connect" className="focus-visible:outline-none">
+              <Button variant="outline" size="lg" className="relative group/button overflow-hidden rounded-full">
+                Connect With Us
+                {/* Shine overlay */}
+                <div className="absolute inset-0 -translate-x-full group-hover/button:animate-shine bg-gradient-to-r from-transparent via-foreground/5 to-transparent pointer-events-none" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </Section>
+
+      {/* SECTION 10: FAQs (Accordion) */}
+      <Section id="team-faq" variant="standard" className="bg-rhythm border-t border-[rgba(15,23,42,0.08)] pb-[56px]">
         <div className="space-y-16 max-w-4xl mx-auto flex flex-col items-center">
           <div className="text-center max-w-2xl flex flex-col items-center space-y-3">
             <Typography variant="h2" className="text-3xl font-heading font-semibold text-foreground text-center">
@@ -411,37 +442,6 @@ export default function OurTeamPage() {
                 </div>
               )
             })}
-          </div>
-        </div>
-      </Section>
-
-      {/* SECTION 10: FINAL CTA (Centered Card) */}
-      <Section id="team-final-cta" variant="standard" className="bg-white py-[88px] lg:py-[112px]">
-        <div className="w-full max-w-5xl mx-auto rounded-[32px] border border-[rgba(15,23,42,0.08)] bg-card p-10 md:p-16 lg:p-20 shadow-premium-card text-center flex flex-col items-center justify-center space-y-8">
-          <div className="space-y-4 max-w-2xl flex flex-col items-center">
-            <Typography variant="h2" className="text-3xl md:text-[56px] leading-[1.08] font-heading font-semibold text-foreground text-center">
-              {"Let's Start With A Conversation"}
-            </Typography>
-            <Typography variant="body-large" className="text-[20px] leading-[1.8] text-muted-foreground/95 max-w-xl mx-auto font-light text-center">
-              {"Whether you already know where you want to study or you're just beginning your research, we're here to help you make informed decisions with confidence."}
-            </Typography>
-          </div>
-
-          <div className="flex flex-wrap gap-4 justify-center w-full">
-            <Link href="/consultation" className="focus-visible:outline-none">
-              <Button variant="primary" size="lg" className="relative group/button overflow-hidden rounded-full shadow-md hover:shadow-lg transition-shadow">
-                Request a Consultation
-                {/* Shine overlay */}
-                <div className="absolute inset-0 -translate-x-full group-hover/button:animate-shine bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
-              </Button>
-            </Link>
-            <Link href="/connect" className="focus-visible:outline-none">
-              <Button variant="outline" size="lg" className="relative group/button overflow-hidden rounded-full">
-                Connect With Us
-                {/* Shine overlay */}
-                <div className="absolute inset-0 -translate-x-full group-hover/button:animate-shine bg-gradient-to-r from-transparent via-foreground/5 to-transparent pointer-events-none" />
-              </Button>
-            </Link>
           </div>
         </div>
       </Section>

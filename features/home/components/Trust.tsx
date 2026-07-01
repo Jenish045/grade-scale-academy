@@ -45,9 +45,9 @@ export default function Trust() {
       subtitle="The Trust Foundation"
       description="We reject the transactional nature of generic consulting. Our focus is on long-term relationships, ensuring students and parents receive advice based on potential—not commission."
       align="center"
-      variant="standard"
-      className="bg-rhythm border-b border-[rgba(15,23,42,0.08)] pt-[88px] lg:pt-[88px]"
-      headerClassName="max-w-[720px]"
+      variant="compact"
+      className="bg-rhythm border-b border-[rgba(15,23,42,0.08)] py-[72px]"
+      headerClassName="max-w-[720px] mb-10 lg:mb-12"
     >
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
         {trustItems.map((item, idx) => (

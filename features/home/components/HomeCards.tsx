@@ -2,8 +2,6 @@
 
 import React from "react"
 import Link from "next/link"
-import { Star } from "lucide-react"
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card"
 import { Typography } from "@/components/ui/typography"
 import { HomePlaceholder } from "./HomePlaceholder"
 import { cn } from "@/lib/utils"

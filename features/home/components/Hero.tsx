@@ -7,7 +7,7 @@ import { FadeUp } from "@/components/ui/animation"
 
 export default function Hero() {
   return (
-    <Section id="hero" variant="standard" className="bg-white overflow-hidden pb-[88px]">
+    <Section id="hero" variant="hero" className="bg-white overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-12 items-center">
         {/* Left Column: Context & CTA */}
         <div className="lg:col-span-6 flex flex-col justify-center">
@@ -32,7 +32,7 @@ export default function Hero() {
               variant="body-large"
               className="text-[22px] leading-[1.7] text-muted-foreground/90 max-w-[640px] block font-light"
             >
-              Every student's future deserves advice based on potential—not commission. Located in Rajkot, Gujarat, we assist you in making the right educational choices without the hard sell.
+              {"Every student's future deserves advice based on potential—not commission. Located in Rajkot, Gujarat, we assist you in making the right educational choices without the hard sell."}
             </Typography>
           </FadeUp>
 

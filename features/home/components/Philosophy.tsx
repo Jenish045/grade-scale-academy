@@ -22,35 +22,18 @@ export default function Philosophy() {
           </Typography>
           
           <Typography variant="body" className="text-[18px] leading-[1.8] text-muted-foreground/90 block">
-            Most academic consulting pathways prioritize commission first, adapting the student to a pre-selected destination template. We believe a student's path should be chosen based on real potential—not agent profit.
+            {"Most academic consulting pathways prioritize commission first, adapting the student to a pre-selected destination template. We believe a student's path should be chosen based on real potential—not agent profit."}
           </Typography>
           
           <Typography variant="body" className="text-[18px] leading-[1.8] text-muted-foreground/90 block font-light">
-            Our mentorship starts with the student. We evaluate your academic background, long-term goals, and financial planning. Only after completing a holistic profile review do we align appropriate countries and courses.
+            {"Our mentorship starts with the student. We evaluate your academic background, long-term goals, and financial planning. Only after completing a holistic profile review do we align appropriate countries and courses."}
           </Typography>
           
-          <div className="space-y-4 pt-6 border-t border-[rgba(15,23,42,0.08)]">
-            <div className="flex gap-4">
-              <div className="size-6 rounded-full bg-primary/5 border border-[rgba(15,23,42,0.08)] flex items-center justify-center shrink-0 text-primary mt-1">
-                <span className="text-xs font-bold font-serif">1</span>
-              </div>
-              <div>
-                <Typography variant="label" className="font-semibold text-foreground text-[16px]">Profile-First Evaluation</Typography>
-                <Typography variant="small" className="text-muted-foreground text-xs block mt-0.5">Deep understanding of credentials and career goals.</Typography>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <div className="size-6 rounded-full bg-primary/5 border border-[rgba(15,23,42,0.08)] flex items-center justify-center shrink-0 text-primary mt-1">
-                <span className="text-xs font-bold font-serif">2</span>
-              </div>
-              <div>
-                <Typography variant="label" className="font-semibold text-foreground text-[16px]">Destination Matchmaking</Typography>
-                <Typography variant="small" className="text-muted-foreground text-xs block mt-0.5">Objective choices matching target parameters, not agent benefits.</Typography>
-              </div>
-            </div>
+          {/* Editorial Quote Statement */}
+          <div className="pt-6 border-t border-[rgba(15,23,42,0.08)] text-foreground/90 font-serif text-[18px] md:text-[20px] leading-relaxed italic font-light">
+            {"\"Your future is not a volume commodity. You deserve advice that puts your potential first.\""}
           </div>
 
-          {/* Section 3: Optional subtle text link CTA only */}
           <div className="pt-2">
             <Link
               href="/our-story"

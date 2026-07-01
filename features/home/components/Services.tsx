@@ -2,7 +2,6 @@ import Link from "next/link"
 import { Section } from "@/components/ui/section"
 import { Typography } from "@/components/ui/typography"
 import { Button } from "@/components/ui/button"
-import { HomeServiceCard } from "./HomeCards"
 import { StaggerContainer, StaggerItem } from "@/components/ui/animation"
 
 interface ServiceItem {
@@ -108,18 +107,33 @@ export default function Services() {
           </Typography>
         </div>
 
-        {/* Right Column: Service Cards Grid */}
+        {/* Right Column: Service Journey Stages Stack */}
         <div className="lg:col-span-8 w-full">
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
+          <StaggerContainer className="space-y-6">
             {services.map((svc, idx) => (
               <StaggerItem key={idx}>
-                <HomeServiceCard
-                  title={svc.title}
-                  category={svc.category}
-                  description={svc.description}
-                  benefits={svc.bullets}
-                  className="bg-card h-full"
-                />
+                <div className="bg-card border border-[rgba(15,23,42,0.08)] rounded-3xl p-6 md:p-8 flex flex-col md:flex-row md:items-start gap-4 md:gap-8 justify-between hover:translate-y-[-2px] hover:shadow-[0_8px_20px_rgba(15,23,42,0.02)] transition-all">
+                  <div className="md:w-1/3 space-y-1">
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-primary block">
+                      {svc.category}
+                    </span>
+                    <Typography variant="h3" className="font-heading font-semibold text-lg md:text-xl">
+                      {svc.title}
+                    </Typography>
+                  </div>
+                  <div className="md:w-2/3 space-y-3">
+                    <Typography variant="body" className="text-sm md:text-base leading-relaxed text-muted-foreground font-light">
+                      {svc.description}
+                    </Typography>
+                    <div className="flex flex-wrap gap-1.5">
+                      {svc.bullets.map((bullet, bIdx) => (
+                        <span key={bIdx} className="bg-muted/50 border border-[rgba(15,23,42,0.04)] text-foreground/85 px-2.5 py-0.5 rounded-full text-xs font-light">
+                          {bullet}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>

@@ -4,17 +4,17 @@ import React, { useState } from "react"
 import Link from "next/link"
 import { 
   ChevronDown,
-  Users,
   CheckCircle2,
-  UserCheck,
-  HeartHandshake,
-  Shield,
   Phone,
   Mail,
   MapPin,
   MessageCircle,
   Clock,
-  Car
+  Car,
+  Users,
+  Shield,
+  HeartHandshake,
+  UserCheck
 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -367,8 +367,80 @@ export default function ConnectPage() {
         </div>
       </Section>
 
-      {/* SECTION 6: FREQUENTLY ASKED QUESTIONS (Accordion) */}
-      <Section id="connect-faq" variant="standard" className="bg-rhythm py-[88px] lg:py-[112px] border-b border-[rgba(15,23,42,0.08)]">
+      {/* SECTION 6: OFFICE GALLERY (6 Placeholders) */}
+      <Section id="connect-gallery" variant="standard" className="bg-white py-[88px] lg:py-[112px] border-b border-[rgba(15,23,42,0.08)]">
+        <div className="space-y-16 max-w-6xl mx-auto flex flex-col items-center">
+          <div className="text-center max-w-2xl flex flex-col items-center space-y-3">
+            <Typography variant="h2" className="text-3xl font-heading font-semibold text-foreground text-center">
+              Inside Our Counseling Space
+            </Typography>
+            <Typography variant="body" className="text-muted-foreground leading-relaxed text-center font-light">
+              {"Take a look around our classrooms and private counseling cabins in Rajkot."}
+            </Typography>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full items-stretch">
+            {[
+              { title: "Reception Lobby", label: "Front reception desk and coordinate lounge area" },
+              { title: "Counseling Cabin", label: "Private glass and wood counseling cabins" },
+              { title: "IELTS Classroom", label: "Quiet IELTS & PTE exam preparation classrooms" },
+              { title: "Discussion Space", label: "Open study tables for student coordination" },
+              { title: "Academy Exterior", label: "Entrance storefront and visitor parking access" },
+              { title: "Resource Library", label: "Study materials and visa guide bookshelves" },
+            ].map((img, idx) => (
+              <Card key={idx} className="rounded-[32px] border border-[rgba(15,23,42,0.08)] bg-card p-6 flex flex-col justify-start space-y-4 hover:translate-y-[-4px] hover:shadow-[0_12px_28px_rgba(15,23,42,0.04)] transition-all h-full">
+                <HomePlaceholder
+                  label={`${img.title} [Photo Placeholder]`}
+                  aspectRatio="aspect-[4/3] w-full"
+                  className="rounded-2xl"
+                />
+                <div className="space-y-1 text-left">
+                  <Typography variant="h3" className="font-heading font-semibold text-lg">
+                    {img.title}
+                  </Typography>
+                  <Typography variant="body" className="text-xs text-muted-foreground leading-relaxed font-light">
+                    {img.label}
+                  </Typography>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* SECTION 7: FINAL CTA */}
+      <Section id="connect-final-cta" variant="cta" className="bg-white">
+        <div className="w-full max-w-5xl mx-auto rounded-[32px] border border-[rgba(15,23,42,0.08)] bg-card p-10 md:p-16 lg:p-20 shadow-premium-card text-center flex flex-col items-center justify-center space-y-8">
+          <div className="space-y-4 max-w-2xl flex flex-col items-center">
+            <Typography variant="h2" className="text-3xl md:text-[56px] leading-[1.08] font-heading font-semibold text-foreground text-center">
+              {"Ready To Take The First Step?"}
+            </Typography>
+            <Typography variant="body-large" className="text-[20px] leading-[1.8] text-muted-foreground/95 max-w-xl mx-auto font-light text-center">
+              {"Visit us, call us, or request a consultation online. We're here whenever you're ready."}
+            </Typography>
+          </div>
+
+          <div className="flex flex-wrap gap-4 justify-center w-full">
+            <Link href="/consultation" className="focus-visible:outline-none">
+              <Button variant="primary" size="lg" className="relative group/button overflow-hidden rounded-full shadow-md hover:shadow-lg transition-shadow">
+                Request a Consultation
+                {/* Shine overlay */}
+                <div className="absolute inset-0 -translate-x-full group-hover/button:animate-shine bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+              </Button>
+            </Link>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="focus-visible:outline-none">
+              <Button variant="outline" size="lg" className="relative group/button overflow-hidden rounded-full">
+                Get Directions
+                {/* Shine overlay */}
+                <div className="absolute inset-0 -translate-x-full group-hover/button:animate-shine bg-gradient-to-r from-transparent via-foreground/5 to-transparent pointer-events-none" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </Section>
+
+      {/* SECTION 8: FREQUENTLY ASKED QUESTIONS (Accordion) */}
+      <Section id="connect-faq" variant="standard" className="bg-rhythm border-t border-[rgba(15,23,42,0.08)] pb-[56px]">
         <div className="space-y-16 max-w-4xl mx-auto flex flex-col items-center">
           <div className="text-center max-w-2xl flex flex-col items-center space-y-3">
             <Typography variant="h2" className="text-3xl font-heading font-semibold text-foreground text-center">
@@ -412,78 +484,6 @@ export default function ConnectPage() {
                 </div>
               )
             })}
-          </div>
-        </div>
-      </Section>
-
-      {/* SECTION 7: OFFICE GALLERY (6 Placeholders) */}
-      <Section id="connect-gallery" variant="standard" className="bg-white py-[88px] lg:py-[112px] border-b border-[rgba(15,23,42,0.08)]">
-        <div className="space-y-16 max-w-6xl mx-auto flex flex-col items-center">
-          <div className="text-center max-w-2xl flex flex-col items-center space-y-3">
-            <Typography variant="h2" className="text-3xl font-heading font-semibold text-foreground text-center">
-              Inside Our Counseling Space
-            </Typography>
-            <Typography variant="body" className="text-muted-foreground leading-relaxed text-center font-light">
-              {"Take a look around our classrooms and private counseling cabins in Rajkot."}
-            </Typography>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full items-stretch">
-            {[
-              { title: "Reception Lobby", label: "Front reception desk and coordinate lounge area" },
-              { title: "Counseling Cabin", label: "Private glass and wood counseling cabins" },
-              { title: "IELTS Classroom", label: "Quiet IELTS & PTE exam preparation classrooms" },
-              { title: "Discussion Space", label: "Open study tables for student coordination" },
-              { title: "Academy Exterior", label: "Entrance storefront and visitor parking access" },
-              { title: "Resource Library", label: "Study materials and visa guide bookshelves" },
-            ].map((img, idx) => (
-              <Card key={idx} className="rounded-[32px] border border-[rgba(15,23,42,0.08)] bg-card p-6 flex flex-col justify-start space-y-4 hover:translate-y-[-4px] hover:shadow-[0_12px_28px_rgba(15,23,42,0.04)] transition-all h-full">
-                <HomePlaceholder
-                  label={`${img.title} [Photo Placeholder]`}
-                  aspectRatio="aspect-[4/3] w-full"
-                  className="rounded-2xl"
-                />
-                <div className="space-y-1 text-left">
-                  <Typography variant="h3" className="font-heading font-semibold text-lg">
-                    {img.title}
-                  </Typography>
-                  <Typography variant="body" className="text-xs text-muted-foreground leading-relaxed font-light">
-                    {img.label}
-                  </Typography>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* SECTION 8: FINAL CTA */}
-      <Section id="connect-final-cta" variant="standard" className="bg-white py-[88px] lg:py-[112px]">
-        <div className="w-full max-w-5xl mx-auto rounded-[32px] border border-[rgba(15,23,42,0.08)] bg-card p-10 md:p-16 lg:p-20 shadow-premium-card text-center flex flex-col items-center justify-center space-y-8">
-          <div className="space-y-4 max-w-2xl flex flex-col items-center">
-            <Typography variant="h2" className="text-3xl md:text-[56px] leading-[1.08] font-heading font-semibold text-foreground text-center">
-              {"Ready To Take The First Step?"}
-            </Typography>
-            <Typography variant="body-large" className="text-[20px] leading-[1.8] text-muted-foreground/95 max-w-xl mx-auto font-light text-center">
-              {"Visit us, call us, or request a consultation online. We're here whenever you're ready."}
-            </Typography>
-          </div>
-
-          <div className="flex flex-wrap gap-4 justify-center w-full">
-            <Link href="/consultation" className="focus-visible:outline-none">
-              <Button variant="primary" size="lg" className="relative group/button overflow-hidden rounded-full shadow-md hover:shadow-lg transition-shadow">
-                Request a Consultation
-                {/* Shine overlay */}
-                <div className="absolute inset-0 -translate-x-full group-hover/button:animate-shine bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
-              </Button>
-            </Link>
-            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="focus-visible:outline-none">
-              <Button variant="outline" size="lg" className="relative group/button overflow-hidden rounded-full">
-                Get Directions
-                {/* Shine overlay */}
-                <div className="absolute inset-0 -translate-x-full group-hover/button:animate-shine bg-gradient-to-r from-transparent via-foreground/5 to-transparent pointer-events-none" />
-              </Button>
-            </a>
           </div>
         </div>
       </Section>
